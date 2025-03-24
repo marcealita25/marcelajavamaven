@@ -6,30 +6,35 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
-public class ConsultaBaseDatos {
+import es.cursojava.utils.UtilidadesBD;
+
+public class ConsultaEjercicio3 {
     private static final String CONSULTA_EMPLEADOS=""+
-                    " SELECT ID, NOMBRE, EDAD, SALARIO "+
-                    " FROM EMPLEADOS";
+                    "SELECT em.ID as ID_EMPLEADO,  em.EDAD as EDAD_EMPLEADO, em.NOMBRE AS NOM_EMPLEADO, em.Salario AS SALARIO_EM "+
+                    " AS DEPARTAMENTO_IDEM,em.ID_EQUIPO AS ID_EQUIPOEM,e.ID AS ,e.NOMBRE AS NOMBRE_EQUIPO"+
+                    " FROM EQUIPOS e "+
+                    " join empleados em on em.id_equipo = e.id";
     public static void main(String[] args) {
 
-        System.out.println("Num empleados "+consultaEmpleadoEdad(0,0).size());
+        System.out.println("Num empleados "+consultaEmpleadoMap(0,0).size());
 
     }
 
     public static void consultaEmpleados() {
         
-        Connection conexion = UtilidadesBD.crearConexion();
+        Connection conexion = UtilidadesBD.crearConnection();
         Statement st = null;
         ResultSet rs = null;
         try {
             st = conexion.createStatement();
             rs = st.executeQuery(CONSULTA_EMPLEADOS);
             while(rs.next()){
-                int id = rs.getInt("ID");
-                String nombre = rs.getString("NOMBRE");
-                int edad = rs.getInt("EDAD");
-                double salario = rs.getDouble("SALARIO");
+                int id = rs.getInt("ID_empleado");
+                String nombreEmpleado = rs.getString("NOM_EMPLEADO");
+                int edad = rs.getInt("EDAD_EMPLEADO");
+                double salario = rs.getDouble("SALARIO_EM");
 
                 System.out.println("Registro.[ id: "+ id + ", nombre: "+ nombre
                         + ", edad: " + edad + ", salario: "+salario+ "]");
@@ -54,10 +59,11 @@ public class ConsultaBaseDatos {
     }
 
 
-    public static List<Empleado> consultaEmpleadoEdad(int edadConsultada, double salarioConsultado) {
+    public static List<Empleado> consultaEmpleadoMap(int edadConsultada, double salarioConsultado) {
         List<Empleado> empleados = new ArrayList<>();
+        Map<String, String> mapaEmpleados = new HashMap<>();
 
-        Connection conexion = UtilidadesBD.crearConexion();
+        Connection conexion = UtilidadesBD.crearConnection();
         Statement st = null;
         ResultSet rs = null;
         try {
@@ -86,6 +92,8 @@ public class ConsultaBaseDatos {
 
                 Empleado emp = new Empleado(id, nombre, edad, salario, id, null);
                 empleados.add(emp);
+
+                mapaEmpleados.put("nombreEquipo",
             }
             
         } catch (SQLException e) {
@@ -105,7 +113,7 @@ public class ConsultaBaseDatos {
 
         return empleados;
     }
-    public static Map<>String ,
+    //public static Map<>String ,
 }
 
 
