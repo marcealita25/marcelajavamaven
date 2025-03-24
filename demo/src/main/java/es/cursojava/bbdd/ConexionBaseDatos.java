@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import oracle.jdbc.pool.OracleDataSource;
 
 public class ConexionBaseDatos {
+
 	
     public static void main(String[] args) {
         
@@ -21,37 +22,42 @@ public class ConexionBaseDatos {
 
 		
 		try  {
-			//Class.forName("oracle.jdbc.driver.OracleDriver");
 			Connection connection = DriverManager.getConnection(url_oracle2,username,password);
+			//Class.forName("oracle.jdbc.driver.OracleDriver");
+
 			if (connection!=null) {
 				System.out.println("Conexion establecida");
 			}
+		
 
 		} catch (SQLException e) {
 			System.err.println("Ha habido un error " + e.getMessage());
 			e.printStackTrace();
-		//catch (ClassNotFoundException e) {
-//ODO Auto-generated catch block
-		//.printStackTrace();
-		//
+		
+		}
+			//catch (ClassNotFoundException e) {
+          //TODO Auto-generated catch block
+			   // e.printStackTrace();
+			//}		
+		
+			
 
 	}
 	
 	
-	//tatic void conectaOracle2(){
-	//tring url_oracle = "jdbc:oracle:thin:curso/password@localhost:1521:XE";
-	//  String url_oracle2 = "jdbc:oracle:thin:@localhost:1521:XE";
-	//String username = "curso";
-	//String password = "password";
-
-	//onecction connection = null;
+	private static void conectaOracle2(){
+	 String url_oracle = "jdbc:oracle:thin:curso/password@localhost:1521:XE";
+     String url_oracle2 = "jdbc:oracle:thin:@localhost:1521:XE";
+	 String username = "curso";
+	 String password = "password";
 
 
- 	try {
-			OracleDataSource ods = new OracleDataSource();
+
+ 	 try {
+		OracleDataSource ods = new OracleDataSource();
+		try (Connection connection = ods.getConnection();){
 			ods.setURL(url_oracle);
 			
-	 		Connection connection = ods.getConnection();
 			if (connection!=null) {
 				System.out.println("Conexion establecida");
 			}
@@ -61,5 +67,15 @@ public class ConexionBaseDatos {
 			e.printStackTrace();
 	 	}
 
+	} catch (SQLException e){
+
+		e.printStackTrace();
 	}
+	
+	
 }
+	
+	
+
+
+	
