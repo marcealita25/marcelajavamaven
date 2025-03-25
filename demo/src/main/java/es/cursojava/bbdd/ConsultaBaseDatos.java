@@ -7,6 +7,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import es.cursojava.utils.UtilidadesBD;
+
 public class ConsultaBaseDatos {
     private static final String CONSULTA_EMPLEADOS=""+
                     " SELECT ID, NOMBRE, EDAD, SALARIO "+
@@ -63,7 +65,6 @@ public class ConsultaBaseDatos {
         try {
             st = conexion.createStatement();
             String query = CONSULTA_EMPLEADOS + " WHERE 1=1 ";
-
             if (edadConsultada!=0){
                 query+= " AND EDAD>"+edadConsultada;
             }
@@ -105,7 +106,7 @@ public class ConsultaBaseDatos {
 
         return empleados;
     }
-    public static Map<>String ,
+    //public static Map<>String ,
 }
 
 

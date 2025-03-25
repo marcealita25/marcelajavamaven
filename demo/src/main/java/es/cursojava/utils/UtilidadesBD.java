@@ -40,6 +40,10 @@ public class UtilidadesBD{
 
     }
 
+    public static Connection crearConexion() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
 
 
 
