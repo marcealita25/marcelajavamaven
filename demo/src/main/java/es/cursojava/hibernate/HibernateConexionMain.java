@@ -1,4 +1,4 @@
-package es.cursojava.hibernate;
+package es.cursojava.Hibernate;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
