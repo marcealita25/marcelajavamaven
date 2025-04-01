@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../cursojavamaven-1"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"java.dependency.packagePresentation": "hierarchical",
+		"java.configuration.updateBuildConfiguration": "interactive"
+	}
+}
