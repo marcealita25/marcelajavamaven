@@ -25,6 +25,7 @@ public class Persona {
     @Column(name = "edad")
     private int edad;
 
+    @Column(name = "apellidos")
     private String apellidos;
 
     @Transient
@@ -43,6 +44,12 @@ public class Persona {
         this.edad = edad;
     }
 
+    
+    public Persona(String nombre, int edad, String apellidos) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.apellidos = apellidos;
+    }
     // Getters y Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
