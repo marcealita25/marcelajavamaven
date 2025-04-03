@@ -32,8 +32,9 @@ import jakarta.validation.constraints.Min;
 @Table(name = "TB_CABALLOS")
 
 public class CaballoCarrera {
-@GeneratedValue(strategy=GenerationType.IDENTITY)
+
 @Id
+@GeneratedValue(strategy=GenerationType.IDENTITY)
 private Long id;
 
 @Column(name = "nombre", nullable = false, unique=true, length=50 )
@@ -79,6 +80,18 @@ public CaballoCarrera(String nombre, int edad, double velocidadMaxima, int numer
     this.numeroTriunfo = numeroTriunfo;
     this.experiencia = experiencia;
     this.estadoActivo = estadoActivo;
+}
+
+
+
+
+
+public CaballoCarrera(String nombre,
+        @Min(value = 2, message = "La edad mínima debe ser 2 años.") @Max(value = 30, message = "La edad máxima debe ser 30 años.") int edad,
+        @Min(30) @Max(80) double velocidadMaxima) {
+    this.nombre = nombre;
+    this.edad = edad;
+    this.velocidadMaxima = velocidadMaxima;
 }
 
 
