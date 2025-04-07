@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../../../.."
+		},
+		{
+			"path": "../../../../../../../../../cursojavamaven-1"
+		}
+	],
+	"settings": {
+		"java.project.sourcePaths": [],
+		"java.configuration.updateBuildConfiguration": "interactive"
+	}
+}
