@@ -1,5 +1,13 @@
 package es.cursojava.Hibernate.dto.UnoaUno;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
+
 
 /*El lado propietario de la relación es el que tiene la anotación @JoinColumn.
 mappedBy se usa en el lado no propietario, indicando el atributo en el otro lado que gestiona la relación.

@@ -4,12 +4,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.OneToOne;
 
-public class Direccion {
+
+
     @Entity
+   public class Direccion{
     
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -18,8 +19,9 @@ public class Direccion {
     private String ciudad;
 
     //Bidireccional
-    //@OneToOne(mappedBy = "direccion") // El dueño es Usuario
-    //private Usuario usuario;
+    @OneToOne(mappedBy = "direccion") // El dueño es Usuario
+
+    private Usuario usuario;
     
 
     public Direccion() {
@@ -48,10 +50,11 @@ public class Direccion {
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
     }
-
-    
 }
 
+
+ 
+ 
 
 
 
