@@ -4,7 +4,7 @@ import java.util.List;
 
 import es.cursojava.hibernate.entities.CaballoCarrera;
 
-public class CaballoDAOJDBCImpl implements CaballoDAO{
+public class CaballoDAOJDBC implements CaballoDAO{
 
     @Override
     public void insertar(CaballoCarrera caballo) {

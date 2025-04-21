@@ -30,7 +30,8 @@
         <!-- Clase mapeada -->
         <mapping class="es.cursojava.hibernate.Persona"/>
         <mapping class="es.cursojava.hibernate.CaballoCarrera"/> 
-         <mapping class="es.cursojava.Hibernate.EjercioCaballo.MainCaballo"/>   
+        <mapping class="es.cursojava.Hibernate.EjercioCaballo.MainCaballo"/>   
+        <mapping class="es.cursojava.Hibernate.Entities.jinete"/>   
 
 
     </session-factory>

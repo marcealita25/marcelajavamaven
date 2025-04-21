@@ -32,7 +32,7 @@ public class CaballoDAOImpl implements CaballoDAO {
         String queryActivos = "from CaballoCarrera cc where cc.estaActivo =: param1";
 
         Query<CaballoCarrera> query = session.createQuery(queryActivos, CaballoCarrera.class);
-        query.setParameter("param1", true);
+
         List<CaballoCarrera> lista = query.list();
         
         return lista;

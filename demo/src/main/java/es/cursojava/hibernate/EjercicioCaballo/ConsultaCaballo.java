@@ -43,6 +43,7 @@ public class ConsultaCaballo {
 
 
 
+             Long id;
              CaballoCarrera ccdto = new CaballoCarrera(id, nombre, edad, numeroTriunfo, experiencia, 1, estadoActivo);
             caballoDTO.add(ccdto);
             

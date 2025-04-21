@@ -34,11 +34,16 @@ Crear Menú:
 
 package es.cursojava.Hibernate.EjercicioCaballo;
 
+import es.cursojava.Hibernate.dto.UnoaUno.ejerciciocarnet.Entities.Jinete;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -78,8 +83,11 @@ private int numeroTriunfo;
 private double experiencia;
 
 @Column(name = "EstadoActivo", nullable = false)
-
 private boolean estadoActivo;
+
+@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+@JoinColumn(name ="FK_JINETE")
+private Jinete Jinete;
 
 
 
