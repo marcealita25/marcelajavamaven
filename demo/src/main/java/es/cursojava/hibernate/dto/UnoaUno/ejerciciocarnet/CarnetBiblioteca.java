@@ -24,7 +24,7 @@ public class CarnetBiblioteca {
     private Date fechaExpiracion;
 
     @OneToOne(mappedBy = "carnetbiblioteca")
-    private  Estudiante estudiante;
+    private  EstudianteDTO estudiante;
 
     public CarnetBiblioteca() {
     }
@@ -66,11 +66,11 @@ public class CarnetBiblioteca {
         this.fechaExpiracion = fechaExpiracion;
     }
 
-    public Estudiante getEstudiante() {
+    public EstudianteDTO getEstudiante() {
         return estudiante;
     }
 
-    public void setEstudiante(Estudiante estudiante) {
+    public void setEstudiante(EstudianteDTO estudiante) {
         this.estudiante = estudiante;
     }
 

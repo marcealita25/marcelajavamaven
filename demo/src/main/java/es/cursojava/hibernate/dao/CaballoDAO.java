@@ -1,0 +1,15 @@
+package es.cursojava.Hibernate.dao;
+
+import java.util.List;
+
+import es.cursojava.Hibernate.EjercicioCaballo.CaballoCarrera;
+
+
+
+public interface CaballoDAO {
+    void insertar(CaballoCarrera caballo);
+    List<CaballoCarrera> obtenerTodos();
+    List<CaballoCarrera> obtenerActivos();
+    void eliminar(Long id);
+    void actualizar(CaballoCarrera caballo);
+}

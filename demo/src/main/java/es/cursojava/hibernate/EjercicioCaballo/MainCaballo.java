@@ -61,7 +61,7 @@ public class MainCaballo {
                         Transaction tx = session.beginTransaction();
                         System.out.println(session);
                         
-                        CaballoCarrera caballo1 = new CaballoCarrera(nombreCaballo, edadCaballo,velocidadCaballo, triunfoCaballo,experienciaCaballo, estadoCaballo);
+                        CaballoCarrera caballo1 = new CaballoCarrera(id, nombreCaballo, edadCaballo, triunfoCaballo,experienciaCaballo, 1, estadoCaballo);
                         // CaballoCarrera caballo2 = new CaballoCarrera("Carlit", 4, 30, 2, 7, true);
                         // CaballoCarrera caballo3 = new CaballoCarrera("Mariano", 5, 40, 3,5 , true);
                         // CaballoCarrera caballo4 = new CaballoCarrera("Peperino", 7, 70, 6, 8, true);
@@ -116,7 +116,7 @@ public class MainCaballo {
 
 
 
-             CaballoCarrera ccdto = new CaballoCarrera(nombre, edad, velocidadMaxima, numeroTriunfo, experiencia, estadoActivo);
+             CaballoCarrera ccdto = new CaballoCarrera(id, nombre, edad, numeroTriunfo, experiencia, 1, estadoActivo);
             caballoDTO.add(ccdto);
             
             System.out.println("======================");
@@ -136,7 +136,7 @@ public class MainCaballo {
         
             // Si hay dos o más caballos activos, se inicia la carrera
             
-            Random rand = new Random();
+            //Random rand = new Random();
             int distancia = 1000; // Distancia a recorrer
             CaballoCarrera ganador = null;
         

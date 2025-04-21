@@ -89,8 +89,7 @@ public CaballoCarrera() {
 
 
 
-public CaballoCarrera(String nombre, int edad, double velocidadMaxima, int numeroTriunfo, double experiencia,
-        boolean estadoActivo) {
+public CaballoCarrera(Long id1, String nombre, int edad, int numeroTriunfo, int experiencia, int par3, boolean estadoActivo) {
     this.nombre = nombre;
     this.edad = edad;
     this.velocidadMaxima = velocidadMaxima;
