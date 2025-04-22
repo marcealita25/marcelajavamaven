@@ -5,6 +5,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import es.cursojava.Hibernate.dao.Persona;
+
 public class HibernateMain {
     
  public static void main(String[] args) {

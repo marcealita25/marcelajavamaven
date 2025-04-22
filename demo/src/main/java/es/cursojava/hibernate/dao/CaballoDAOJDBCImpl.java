@@ -2,9 +2,10 @@ package es.cursojava.Hibernate.dao;
 
 import java.util.List;
 
-import es.cursojava.hibernate.entities.CaballoCarrera;
+import es.cursojava.Hibernate.dao.CaballoCarrera;
+import es.cursojava.Hibernate.dto.Entities.CaballoDTO;
 
-public class CaballoDAOJDBC implements CaballoDAO{
+public class CaballoDAOJDBCImpl implements CaballoDAO{
 
     @Override
     public void insertar(CaballoCarrera caballo) {
@@ -35,5 +36,14 @@ public class CaballoDAOJDBC implements CaballoDAO{
         throw new UnsupportedOperationException("Unimplemented method 'actualizar'");
     }
 
+    @Override
+    public CaballoCarrera getCaballoPorId(long caballoId){
+        throw new UnsupportedOperationException("Unimplemented method 'getCaballoPorId'");
+    }
 
+    @Override
+    public CaballoDTO obtenerJinete(long caballoId) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'obtenerJinete'");
+    }
 }
