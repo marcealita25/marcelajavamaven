@@ -1,5 +1,6 @@
 package es.cursojava.funciones;
 
+import java.util.Date;
 import java.util.Scanner;
 
 public class Utilidades {
@@ -82,6 +83,14 @@ public class Utilidades {
 		}
 		System.out.println(texto);
 	}
+
+    public static Date pideDatoDato(String de_que_fecha_quieres_saber_el_total_de_pe) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public static Date pideDatoDate(String de_que_fecha_quieres_saber_el_total_de_pe) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 	
 }
 

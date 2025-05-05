@@ -2,9 +2,10 @@ package es.cursojava.Hibernate.Front;
 
 import java.util.List;
 
-import es.cursojava.Hibernate.EjercicioCaballo.*;
+import es.cursojava.Hibernate.dto.CaballoDTO;
+import es.cursojava.Hibernate.entities.CaballoCarrera;
 import es.cursojava.Hibernate.services.CarreraService;
-import es.cursojava.inicio.funciones.Utilidades;
+import es.cursojava.funciones.Utilidades;
 
 public class CarreraCaballosFront {
 
@@ -22,8 +23,9 @@ public class CarreraCaballosFront {
         do {
             Utilidades.pintaMenu(new String[]{"1. Insertar nuevo caballo ",
                 "2. Mostrar Caballos","3. Iniciar carrera",
-                "4. Borrar Caballo","5. Cambiar Jinete"
-                ,"6. Salir"} , "");
+                "4. Borrar Caballo","5. Cambiar Jinete",
+                "6. Mostrar caballos por nacionalidad Jinete",
+                "7. Salir"} , "");
             opcion = Utilidades.pideDatoNumerico("Elige una opción: ");
             
             switch (opcion) {
@@ -43,12 +45,15 @@ public class CarreraCaballosFront {
                     cambiarJinete();
                     break;
                 case 6:
+                    mostrarCaballosNacionalidadJinete();
+                    break;
+                case 7:
                     System.out.println("Aaaadios!");;
                     break;
                 default:
                     System.out.println("Opción incorrecta");
             }
-        } while (opcion != 6);
+        } while (opcion != 7);
 
     }
 
@@ -105,5 +110,14 @@ public class CarreraCaballosFront {
         caballoDTO.setNacionalidadJinete(nacionalidadJinete);
 
         servicio.actualizarJineteCaballo(idCaballo, caballoDTO);
+    }
+
+    private void mostrarCaballosNacionalidadJinete(){
+        String nacionalidad = Utilidades.pideDatoCadena("Nacionalidad Jinete");
+        List<CaballoCarrera> caballos = servicio.obtenerCaballosNacionalidadJinete(nacionalidad);
+        for (CaballoCarrera caballoCarrera : caballos) {
+            System.out.println(caballoCarrera);
+        }
+
     }
 }

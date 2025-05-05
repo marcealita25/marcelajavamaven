@@ -1,4 +1,4 @@
-package es.cursojava.hibernate.dto;
+package es.cursojava.Hibernate.dto;
 
 public class CaballoDTO {
     private String nombre;

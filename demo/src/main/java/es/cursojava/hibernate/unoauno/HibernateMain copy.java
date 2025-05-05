@@ -1,15 +1,12 @@
-package es.cursojava.Hibernate;
+package es.cursojava.Hibernate.unoauno;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-import es.cursojava.Hibernate.dao.Persona;
-
 public class HibernateMain {
-    
- public static void main(String[] args) {
+    public static void main(String[] args) {
 
         try {
             SessionFactory sessionFactory = new Configuration()
@@ -19,14 +16,11 @@ public class HibernateMain {
             Transaction tx = session.beginTransaction();
             System.out.println(session);
             
-            Persona p1 = new Persona("Maria", 28, "Perez");
-            Persona p2 = new Persona("Carla", 34 , "Torres");
-            Persona p3 = new Persona("Mario", 56 , "Aliaga");
-    
+            Persona p1 = new Persona("Ana", 25);
+            Persona p2 = new Persona("Luis", 30);
     
             session.persist(p1);
             session.persist(p2);
-            session.persist(p3);
     
             tx.commit();
 
@@ -41,5 +35,4 @@ public class HibernateMain {
         
         
     }
-
 }

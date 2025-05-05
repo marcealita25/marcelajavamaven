@@ -44,7 +44,7 @@ public class ConsultaCaballo {
 
 
              Long id;
-             CaballoCarrera ccdto = new CaballoCarrera(id, nombre, edad, numeroTriunfo, experiencia, 1, estadoActivo);
+             CaballoCarrera ccdto = new CaballoCarrera (Id, nombre, edad, numeroTriunfo, experiencia, 1, estadoActivo);
             caballoDTO.add(ccdto);
             
             System.out.println("======================");

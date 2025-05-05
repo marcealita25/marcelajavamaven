@@ -1,5 +1,8 @@
 package es.cursojava.Hibernate.entities;
 
+import java.util.List;
+
+import es.cursojava.Hibernate.dto.ClienteDTO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -69,6 +72,15 @@ public class Cliente {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Object getPedidos() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public List<ClienteDTO> getPedidos() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getPedidos'");
     }
 
     

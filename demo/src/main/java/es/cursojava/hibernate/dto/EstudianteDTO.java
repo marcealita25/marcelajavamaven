@@ -1,4 +1,4 @@
-package es.cursojava.hibernate.dto;
+package es.cursojava.Hibernate.dto;
 
 import java.util.Date;
 

@@ -34,7 +34,7 @@ Crear Menú:
 
 package es.cursojava.Hibernate.EjercicioCaballo;
 
-import es.cursojava.Hibernate.dto.UnoaUno.ejerciciocarnet.Entities.Jinete;
+import es.cursojava.Hibernate.entities.Jinete;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -91,7 +91,7 @@ private Jinete Jinete;
 
 
 
-public CaballoCarrera() {
+public CaballoCarrera(Long id2, String nombre2, int edad2, int numeroTriunfo2, double experiencia2, int i, boolean estadoActivo2) {
 }
 
 

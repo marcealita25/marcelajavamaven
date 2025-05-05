@@ -11,7 +11,10 @@ import org.hibernate.query.Query;
 
 import es.cursojava.Hibernate.HibernateUtil;
 import es.cursojava.funciones.Utilidades;
+
 import java.util.random.*;
+
+import jakarta.persistence.Id;
 
 public class MainCaballo {
 
@@ -61,7 +64,7 @@ public class MainCaballo {
                         Transaction tx = session.beginTransaction();
                         System.out.println(session);
                         
-                        CaballoCarrera caballo1 = new CaballoCarrera(id, nombreCaballo, edadCaballo, triunfoCaballo,experienciaCaballo, 1, estadoCaballo);
+                        CaballoCarrera caballo1 = new CaballoCarrera(Id, nombreCaballo, edadCaballo, triunfoCaballo,experienciaCaballo, 1, estadoCaballo);
                         // CaballoCarrera caballo2 = new CaballoCarrera("Carlit", 4, 30, 2, 7, true);
                         // CaballoCarrera caballo3 = new CaballoCarrera("Mariano", 5, 40, 3,5 , true);
                         // CaballoCarrera caballo4 = new CaballoCarrera("Peperino", 7, 70, 6, 8, true);
@@ -116,7 +119,7 @@ public class MainCaballo {
 
 
 
-             CaballoCarrera ccdto = new CaballoCarrera(id, nombre, edad, numeroTriunfo, experiencia, 1, estadoActivo);
+             CaballoCarrera ccdto = new CaballoCarrera(Id, nombre, edad, numeroTriunfo, experiencia, 1, estadoActivo);
             caballoDTO.add(ccdto);
             
             System.out.println("======================");

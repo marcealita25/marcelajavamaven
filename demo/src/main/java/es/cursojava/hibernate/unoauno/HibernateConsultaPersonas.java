@@ -1,4 +1,4 @@
-package es.cursojava.Hibernate;
+package es.cursojava.Hibernate.unoauno;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,12 +6,9 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
-import es.cursojava.Hibernate.dao.Persona;
 import es.cursojava.Hibernate.dto.PersonaDTO;
 
-public class HibernateConsultaPersona {
-
-    
+public class HibernateConsultaPersonas {
     public static void main(String[] args) {
         
         Session session = HibernateUtil.getSession();
@@ -43,23 +40,44 @@ public class HibernateConsultaPersona {
 
         System.out.println("3. Varios campos ======================");
 
+        String hql3 = "select p.nombre, p.edad from Persona p where p.edad>:edadMin";
+        Query<Object[]> query3 = session.createQuery(hql3, Object[].class);
+        query3.setParameter("edadMin", 20);
+        List<Object[]> resgistros = query3.list();
+        for (Object[] registro : resgistros) {
+            System.out.println("nombre: "+registro[0]);
+            System.out.println("edad: "+registro[1]);
+            System.out.println("======================");
+        }
+
+        //Usamos patrón DTO con la clase PersonaDTO
         String hql4 = "select p.nombre, p.edad from Persona p where p.edad>:edadMin";
+        //Query<PersonaDTO> query4 = session.createQuery(hql4, PersonaDTO.class);
         Query<Object[]> query4 = session.createQuery(hql4, Object[].class);
         query4.setParameter("edadMin", 20);
         List<Object[]> resgistros4 = query4.list();
-        List<PersonaDTO>personaDTO = new ArrayList<>();
+        List<PersonaDTO> personasDTO = new ArrayList<>();
         for (Object[] registro : resgistros4) {
             System.out.println("nombre: "+registro[0]);
             System.out.println("edad: "+registro[1]);
             String nombre = (String)registro[0];
             int edad = (int)registro[1];
-
-            PersonaDTO pdto = new PersonaDTO(nombre, edad);
-            personaDTO.add(pdto);
             
+            PersonaDTO pdto = new PersonaDTO(nombre , edad );
+            personasDTO.add(pdto);
             System.out.println("======================");
         }
+        System.out.println("Personas DTO en lista propia: "+personasDTO.size());
+
+        //Usamos patrón DTO con la clase PersonaDTO mas elegante
+        String hql5 = "select new es.cursojava.hibernate.dto.PersonaDTO(p.nombre, p.edad) "+
+                " from Persona p where p.edad>:edadMin";
+        Query<PersonaDTO> query5 = session.createQuery(hql5, PersonaDTO.class);
+        query5.setParameter("edadMin", 20);
+        List<PersonaDTO> resgistros5 = query5.list();
+        System.out.println("Personas DTO: "+resgistros5.size());
+        
 
     }
-
 }
+
